@@ -72,7 +72,7 @@ server <- function(input, output, session) {
         )
         
         geometry <- route$routes[[1]]$geometry
-        decoded <- googlePolylines::decode(geometry)[[1]]
+        decoded <- googlePolylines::decode(geometry, arg = "text")[[1]]
         
         if (!is.data.frame(decoded)) {
           warning("❌ Decoded geometry is not a data frame.")
